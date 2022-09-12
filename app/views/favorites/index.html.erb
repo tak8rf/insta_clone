@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>お気に入り一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Content</th>
+      <th scope="col">User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @favorites.nil? %>
+      <p> You have no favorites </p>
+    <% else %>
+      <% @favorites.each do |favorite| %>
+        <tr>
+          <td><%= image_tag favorite.feed.image.url %></td>
+          <td><%= favorite.feed.content %></td>
+          <td><%= favorite.feed.user.name %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
