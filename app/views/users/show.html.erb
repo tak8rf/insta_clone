@@ -1,5 +1,10 @@
-<h1><%= @user.name %>'s page</h1>
-<br>
+<h2>My page</h2>
+<%= link_to '編集', edit_user_path(@user) %> 
+<hr />
+<p>
+  <strong>User</strong><br>
+  <%= @user.name %>
+</p>
 <p>
   <strong>Profile photo:</strong><br>
   <% if not @user.image.url.nil? %>
@@ -8,7 +13,7 @@
     未登録
   <% end %>
 </p>
-<br>
-<p>e-mail: <%= @user.email %></p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> 
+<p>
+  <strong>e-mail:</strong><br> 
+  <%= @user.email %>
+  </p>
